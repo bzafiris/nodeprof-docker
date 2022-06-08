@@ -1,4 +1,4 @@
-FROM ubuntu:18.04 as nodeprof-builder
+FROM ubuntu:20.04 as nodeprof-builder
 
 RUN \
   apt-get update && \
@@ -11,7 +11,7 @@ ENV PATH ${PATH}:/mx
 
 RUN mx fetch-jdk --java-distribution labsjdk-ce-11
 
-ENV JAVA_HOME /root/.mx/jdks/labsjdk-ce-11-jvmci-22.1-b03
+ENV JAVA_HOME /root/.mx/jdks/labsjdk-ce-11-jvmci-22.2-b02
 
 WORKDIR /workspace-nodeprof
 RUN git clone https://github.com/Haiyang-Sun/nodeprof.js.git
